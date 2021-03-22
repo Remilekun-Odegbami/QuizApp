@@ -1,0 +1,1012 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: aqua;
+}
+
+a {
+  text-decoration: none;
+}
+
+.start-box {
+  min-width: 40% !important;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  transform: translate(-50%, -50%) scale(0.9);
+  opacity: 0.9;
+}
+
+.start-box,
+.info-box,
+.quiz-box,
+.result-box,
+.contact-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0px 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 0.3s ease;
+}
+
+.info-box.activeInfo,
+.quiz-box.activeQuiz,
+.contact-box.activeContact,
+.start-box.activeStart,
+.quiz-box.activeHint,
+.result-box.activeResult {
+  z-index: 5;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* .contact-box.activeContact {
+  z-index: 5;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+} */
+
+.start-btn h1 {
+  font-size: 2em;
+  margin: 20px 0 auto;
+}
+
+.start-btn p {
+  font-size: 1.5em;
+  margin: 30px 0;
+  font-weight: 500;
+}
+
+.start-btn a {
+  text-decoration: none;
+  color: red;
+  font-weight: 500;
+}
+
+.start-btn button {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(6, 143, 97);
+  cursor: pointer;
+  box-shadow: 3px 3px white;
+  margin-right: 50px;
+}
+
+.start-btn button:focus {
+  outline: none;
+}
+
+.start-btn .contact {
+  background-color: blueviolet;
+}
+
+.info-box {
+  max-width: 70%;
+  height: 50%;
+  background-color: beige;
+  border-radius: 5px;
+  box-shadow: 10px 15px 30px blueviolet;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.info-box .info-title {
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid lightblue;
+  display: flex;
+  padding: 0 35px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 15px;
+  white-space: nowrap;
+}
+
+.info-box .info-list {
+  padding: 15px 35px;
+}
+
+.info-box .info-list .info {
+  margin: 5px 0;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.info-box .info-list .info span {
+  font-weight: 600;
+  color: peru;
+}
+
+.rules {
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-shadow: 2px 1px lightcoral;
+}
+
+.info-box .btns {
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 35px;
+  border-top: 1px solid lightblue;
+}
+
+.info-box .btns button {
+  margin: 0px 5px;
+  height: 40px;
+  width: 100px;
+  outline: none;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btns button.restart {
+  color: lightseagreen;
+  border-color: lightblue;
+}
+
+.btns button.restart:hover {
+  background-color: lightblue;
+  color: white;
+  width: 130px;
+  height: 45px;
+  box-shadow: 3px 3px 5px green;
+  margin-left: 5px;
+  white-space: nowrap;
+}
+
+.btns button.quit {
+  color: red;
+  border-color: lightblue;
+}
+
+.btns button.quit:hover {
+  background-color: lightblue;
+  color: white;
+  width: 110px;
+  height: 45px;
+  box-shadow: 3px 3px 5px red;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.btns button.contact-me {
+  border-color: lightblue;
+  padding: 3px 7px;
+  white-space: nowrap;
+  width: 130px;
+  text-align: center;
+}
+
+.btns button.contact-me:hover {
+  background-color: lightblue;
+  color: white;
+  width: 130px;
+  height: 45px;
+  box-shadow: 3px 3px 5px #a42834;
+  margin-left: 5px;
+  white-space: nowrap;
+}
+
+.quiz-box {
+  max-width: 50%;
+  height: 80% !important;
+  background-color: rgb(245, 235, 235);
+  border-radius: 5px;
+  box-shadow: 5px 5px 6px blueviolet;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+@media screen and (min-width: 700px) {
+  .start-box,
+  .info-box,
+  .quiz-box,
+  .result-box,
+  .contact-box {
+    flex-basis: 100%;
+    max-width: 65%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .start-box {
+    display: flex;
+    flex-direction: column;
+    max-height: 50%;
+    max-width: 60% !important;
+  }
+
+  .start-btn h1 {
+    font-size: 2em;
+    margin: 0 auto;
+  }
+
+  .start-btn p {
+    white-space: normal;
+    font-size: 1em;
+    margin: 30px 0;
+  }
+
+  .start-btn button {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+  .quiz-box {
+    width: 50%;
+    height: 70%;
+  }
+
+  .quiz-box header .timer .timer-sec {
+    margin-left: 5px;
+  }
+  .quiz-box header .timer {
+    max-width: 40% !important;
+    margin: 15px;
+  }
+  .quiz-box header .timer .timer-sec {
+    margin-left: 15px;
+    border: none !important;
+    background: none;
+  }
+
+  /*
+  .contact-box .text-area h2 {
+    font-size: 0.7em !important;
+    white-space: normal;
+  }
+
+  .contact-box .text-area label {
+    font-size: 0.9em !important;
+  }
+
+  .contact-box .icon a {
+    display: inline-block;
+    padding-left: 20px;
+    font-size: 0.7em !important;
+  }
+
+  .contact-box .form-btn {
+    font-size: 0.7em;
+  }
+
+  .contact-box .start {
+    font-size: 0.7em !important;
+    margin-bottom: 10px !important;
+  } */
+}
+
+@media screen and (max-width: 699px) {
+  .start-box {
+    display: flex;
+    flex-direction: column;
+    max-height: 70% !important;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .start-btn button {
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+  }
+  .contact-box {
+    max-width: 90%;
+    height: 100%;
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+
+  .quiz-box {
+    width: 70%;
+    height: 70%;
+  }
+  .quiz-box header .timer {
+    max-width: 40% !important;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .start-box {
+    display: flex;
+    flex-direction: column;
+    max-height: 45% !important;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
+  .start-btn h1 {
+    font-size: 2em;
+    margin: 0 auto;
+  }
+
+  .start-btn p {
+    white-space: normal;
+    font-size: 1.2em;
+    margin: 30px 0;
+  }
+
+  .start-btn button {
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+
+  .info-box,
+  .quiz-box,
+  .result-box,
+  .contact-box {
+    max-width: 95%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .start-box {
+    max-width: 50% !important;
+    height: 70%;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+  .quiz-box {
+    height: 80%;
+  }
+  .quiz-box .title {
+    font-size: 5px;
+    margin-top: 10px;
+    white-space: nowrap;
+  }
+  .quiz-box header {
+    display: flex;
+    flex-direction: column;
+    height: 100px !important;
+  }
+  .quiz-box header .timer {
+    max-width: 51% !important;
+    margin: 15px;
+  }
+  .quiz-box header .timer .timer-sec {
+    margin-left: 5px;
+    border: none !important;
+    background: none;
+  }
+  .quiz-box section .que-text {
+    font-size: 18px !important;
+  }
+  section .option-list .option {
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    font-size: 15px !important;
+  }
+  .option-list .option .icon {
+    font-size: 14px;
+  }
+  .quiz-box footer {
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  footer .next-btn {
+    margin-top: 10px;
+    font-size: 1em !important;
+    white-space: nowrap;
+  }
+  .quiz-box footer .total-que span {
+    font-size: 10px;
+  }
+
+  .contact-box {
+    height: 65% !important;
+    transform: translate(-50%, -50%) scale(1.2) !important;
+    opacity: 0;
+  }
+
+  .contact-box .text-area h2 {
+    font-size: 1em !important;
+    white-space: normal;
+  }
+
+  .contact-box .text-area label {
+    font-size: 0.85em !important;
+  }
+
+  .contact-box .icon a {
+    display: inline-block;
+    padding-left: 20px;
+    font-size: 0.7em !important;
+    margin-bottom: 10px;
+  }
+
+  .contact-box .form-btn {
+    font-size: 0.7em;
+    margin-bottom: 10px;
+  }
+
+  .contact-box .start {
+    font-size: 0.7em !important;
+    margin-top: 20px !important;
+  }
+
+  .info-box {
+    width: 80% !important;
+    height: 60%;
+  }
+
+  .info-box .info-title {
+    height: 60px;
+    width: 100%;
+    font-size: 10px;
+  }
+
+  .info-box .info-list {
+    padding: 10px 25px;
+  }
+
+  .info-box .info-list .info {
+    font-size: 0.8em;
+  }
+
+  .rules {
+    font-size: 2em;
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+  .info-box .btns button {
+    margin: 0px 5px;
+    height: 30px;
+    width: 100px;
+    font-size: 15px;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .quiz-box header .timer {
+    margin: 10px;
+  }
+  .start-box {
+    display: flex;
+    flex-direction: column;
+    max-height: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
+  .start-btn h1 {
+    font-size: 2em;
+    margin: 0 auto;
+  }
+
+  .start-btn p {
+    white-space: normal;
+    font-size: 1em;
+    margin: 10px 0;
+  }
+  .start-btn button {
+    font-size: 0.8em;
+    padding: 15px;
+  }
+  .contact-box {
+    width: 60% !important;
+    height: 71% !important;
+    transform: translate(-50%, -50%) scale(1.2) !important;
+    opacity: 0;
+  }
+
+  .contact-box .text-area h2 {
+    font-size: 0.7em !important;
+    white-space: normal;
+  }
+
+  .contact-box .text-area label {
+    font-size: 0.9em !important;
+  }
+
+  .contact-box .icon a {
+    display: inline-block;
+    padding-left: 20px;
+    font-size: 0.7em !important;
+  }
+
+  .contact-box .form-btn {
+    font-size: 0.7em;
+    margin-bottom: 10px;
+  }
+
+  .contact-box .start {
+    font-size: 0.7em !important;
+    margin-bottom: 10px !important;
+  }
+  .quiz-box {
+    height: 88%;
+  }
+
+  .quiz-box header {
+    display: flex;
+    flex-direction: column;
+    height: 100px !important;
+  }
+  .quiz-box header .timer {
+    max-width: 66% !important;
+    margin: 15px 0;
+  }
+  .quiz-box header .timer .timer-sec {
+    margin-left: 15px;
+    border: none !important;
+    background: none;
+  }
+  .quiz-box section .que-text {
+    font-size: 18px !important;
+  }
+  section .option-list .option {
+    padding: 5px 5px;
+    margin-bottom: 3px;
+    font-size: 12px !important;
+  }
+
+  .option-list .option .icon {
+    font-size: 3px;
+    width: 7px;
+    height: 3px;
+    line-height: inherit;
+  }
+
+  .quiz-box footer {
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  footer .next-btn {
+    margin-top: 10px;
+    font-size: 1.3em !important;
+    white-space: nowrap;
+    border: 3px solid lightblue;
+  }
+  .quiz-box footer .total-que span {
+    font-size: 10px;
+  }
+
+  .info-box {
+    width: 80% !important;
+    height: 60%;
+  }
+  .info-box .info-list {
+    padding: 10px 15px;
+  }
+
+  .info-box .info-list .info {
+    font-size: 0.7em;
+  }
+
+  .info-box .btns button {
+    margin: 0px 5px;
+    padding: 5px 0;
+    height: 40%;
+    font-size: 15px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .result-box {
+    max-width: 80% !important;
+    flex-direction: column;
+  }
+
+  .result-box .btns button {
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    white-space: nowrap;
+  }
+
+  .result-box .icon {
+    font-size: 3em !important;
+    color: blueviolet;
+  }
+
+  .result-box .complete-text {
+    font-size: 0.8em !important;
+    font-weight: 800;
+  }
+
+  .result-box .score-text {
+    font-size: 1em !important;
+  }
+}
+
+.quiz-box header {
+  position: relative;
+  z-index: 99;
+  height: 70px;
+  padding: 0 30px;
+  background: rgb(226, 219, 219);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-box header .title {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+/* .quiz-box header .time-line {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 50%;
+  height: 3px;
+  background-color: blueviolet;
+} */
+
+.quiz-box header .timer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 30%;
+  height: 60%;
+  background-color: bisque;
+  border: 1px solid blueviolet;
+  border-radius: 5px;
+  padding: 0 8px;
+  font-size: 15px;
+}
+
+.quiz-box header .timer .timer-text {
+  font-weight: 400;
+  font-size: 18px;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.quiz-box header .timer .timer-sec {
+  font-size: 20px;
+  font-weight: 500;
+  background-color: burlywood;
+  height: 30px;
+  width: 45px;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid blueviolet;
+  user-select: none;
+}
+
+.quiz-box section {
+  padding: 25px 30px 20px 30px;
+}
+
+.quiz-box section .que-text {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.quiz-box section .option-list {
+  padding: 20px 0;
+  display: block;
+}
+
+.quiz-box .hint {
+  font-weight: 500px;
+}
+
+section .option-list .option {
+  background: aliceblue;
+  border: 1px solid lightblue;
+  border-radius: 5px;
+  padding: 15px 15px;
+  margin-bottom: 12px;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+section .option-list .option:hover {
+  background-color: rgba(187, 195, 202, 0.7);
+  color: #fff;
+  border: 3px solid blueviolet;
+}
+
+.option-list .option:last-child {
+  margin-bottom: 0px;
+}
+
+.option-list .option .icon {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  text-align: center;
+  pointer-events: none;
+  font-size: 18px;
+  width: 25px;
+  height: 25px;
+  line-height: 10px;
+}
+
+.option-list .option .icon.tick {
+  color: #23903c;
+  border-color: #23903c;
+  background-color: #d4edda;
+}
+
+.option-list .option .icon.cross {
+  color: #a42834;
+  border-color: #a42834;
+  background-color: #f8d7da;
+}
+
+.option-list .option.correct {
+  color: #23903c;
+  border-color: #23903c;
+  background-color: #d4edda;
+}
+
+.option-list .option.incorrect {
+  color: #a42834;
+  border-color: #a42834;
+  background-color: #f8d7da;
+}
+
+.option-list .option.disabled {
+  pointer-events: none !important;
+}
+
+.quiz-box .hint.correctAns {
+  font-weight: 500px;
+}
+
+.quiz-box .hint.wrongAns {
+  font-weight: 500px;
+}
+
+.quiz-box .hint.disabled {
+  opacity: 0;
+}
+
+.quiz-box footer {
+  height: 60px;
+  width: 100%;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quiz-box footer .total-que span {
+  display: flex;
+  user-select: none;
+  font-size: 18px;
+}
+
+footer .total-que span p {
+  font-weight: 500;
+  padding: 0 5px;
+}
+
+.total-que span p:first-child {
+  border-left: 3px solid blueviolet;
+}
+
+footer .next-btn {
+  display: none;
+  height: 40px;
+  padding: 0 13px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 400;
+  border: none;
+  outline: none;
+  background: burlywood;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+footer .next-btn:hover {
+  background: cornsilk;
+  border: 3px solid burlywood;
+}
+
+.result-box {
+  max-width: 70%;
+  height: 60%;
+  background-color: rgb(245, 235, 235);
+  border-radius: 5px;
+  box-shadow: 5px 5px 6px blueviolet;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1.4) !important;
+}
+
+.result-box .icon {
+  font-size: 5em;
+  color: blueviolet;
+}
+
+.result-box .complete-text {
+  font-size: 1.5em;
+  font-weight: 800;
+}
+
+.result-box .score-text {
+  font-size: 1em;
+}
+
+.score-text span p {
+  font-weight: 500;
+  display: inline;
+}
+
+.result-box .btns button {
+  margin: 0 10px;
+  margin-top: 10px;
+  height: 40px;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: 1px solid blueviolet;
+  cursor: pointer;
+  transition: all 0.5s easee;
+}
+
+.contact-me {
+  color: #a42834;
+}
+
+.contact-me:hover {
+  background-color: lightblue;
+  color: white;
+  width: 130px;
+  height: 45px;
+  box-shadow: 3px 3px 5px #a42834;
+  margin-left: 5px;
+  white-space: nowrap;
+}
+
+.contact-box {
+  max-width: 50%;
+  height: 75%;
+  background-color: rgb(245, 235, 235);
+  border-radius: 5px;
+  box-shadow: 5px 5px 6px blueviolet;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 50px auto;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.contact-box .text-area h2 {
+  font-size: 1.5em;
+  color: #a42834;
+  margin-bottom: 20px;
+  white-space: pre-wrap;
+}
+
+.contact-box .text-area label {
+  font-size: 1.3em;
+  margin: 20px;
+  display: block;
+  color: #a42834;
+}
+
+.input {
+  text-align: center;
+}
+
+#text,
+#text2 {
+  width: 50%;
+  height: 50%;
+}
+
+#text,
+#text2,
+#msg {
+  background-color: #f8d7da;
+  border: 1px solid blueviolet;
+  border-radius: 5px;
+  max-height: 150px;
+  max-width: 50%;
+}
+
+#text:focus,
+#text2:focus,
+#msg:focus {
+  outline: none;
+}
+
+#msg {
+  max-width: 400px;
+  max-height: 100px;
+}
+
+.contact-box .icon a {
+  display: inline-block;
+  padding-left: 20px;
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+.form-btn {
+  color: lightseagreen;
+  border-color: lightblue;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: block;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid blueviolet;
+  transition: all 0.5s ease;
+}
+
+.form-btn:hover {
+  background-color: lightblue;
+  color: white;
+  width: 130px;
+  height: 45px;
+  box-shadow: 3px 3px 5px green;
+  white-space: nowrap;
+}
+
+.contact-box .start {
+  font-size: 1em;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #a42834;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: block;
+  color: blueviolet;
+}
+
+/* CHECK CONTACT FORM @810PX */

@@ -1,0 +1,1 @@
+The functionality is faulty because users can pick multiple options at the same time. I want to disable every option once the user has clicked on an option. The only thing I want the user to be able to do is click on the next button.

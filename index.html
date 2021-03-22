@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://use.fontawesome.com/0383fc1297.js"></script>
+</head>
+<body>
+    <!-- start quiz button -->
+    <div class="start-box">
+    <div class="start-btn">
+        
+        <h1> Hi,</h1>
+        <p>You are welcome to this Bible quiz created by Remilekun.</p>
+        <p> The questions were gotten from <a href="https://play.howstuffworks.com/quiz/can-you-answer-these-easypeasy-bible-questions"> howstuffworks.  </a> Please click on the button below to start the quiz or contact me.</p>
+        <button class="start"> Start Quiz</button>
+        <button class="contact" id="contact"> Contact Me</button>
+    </div>
+    </div>
+
+    <!-- Info Box -->
+    <div class="info-box">
+        <div class="info-title">
+            <span class="rules"> Rules of the quiz</span>
+        </div>
+        <div class="info-list">
+            <div class="info"> 1. You have <span> 10 seconds </span>to answer each question.</div>
+            <div class="info"> 2. Once you have selected your answer, it can't be undone.</div>
+            <div class="info"> 3. You can't select any option once your time is up.</div>
+            <div class="info"> 4. You can't exit from the quiz once you press play.</div>
+            <div class="info"> 5. You'll get point on the basis of your correct answers.</div>
+            <div class="info"> 6. Ensure you have fun and learn. Good Luck :) </div>
+        </div>
+        <div class="btns">
+            <button class="quit">Exit Quiz</button>
+            <button class="restart"> Play </button>
+            <button class="contact-me" id="contact"> Contact Me </button>
+        </div>
+    </div>
+
+    <!-- quiz Box -->
+    <div class="quiz-box">
+        <header> 
+            <div class="title"> Bible Quiz</div>
+                <div class="timer">
+                    <div class="timer-text"> Time Left: </div>
+                    <div class="timer-sec">10</div>
+                </div>
+            <!-- <div class="time-line"></div> -->
+        </header>
+        <section>
+            <div class="que-text">
+                <!-- <span> 1. Who does the Bible identify as the first man? </span> -->
+            </div>
+            <div class="option-list">
+                <!-- <div class="option">
+                    <span> Adam</span>
+                    <div class="icon tick"> <i class="fa fa-check"></i></div>
+                </div>
+                <div class="option">
+                    <span> Eric </span>
+                    <div class="icon cross"> <i class="fa fa-times"></i></div>
+                </div>
+                <div class="option">
+                    <span> Aaron </span>
+                </div>
+                <div class="option">
+                    <span> James </span>
+                </div> -->
+
+            </div>
+                <div class="hint">
+                    <!-- <span> Adam is the first man </span> -->
+                </div>
+        </section>
+
+        <!-- Quiz Box Footer -->
+        <footer>
+            <div class="total-que">
+                <!-- <span><p>0</p> of <p>11</p> Questions </span> -->
+            </div>
+
+            <button class="next-btn"> Next &#10132; </button>
+
+        </footer>
+    </div>
+
+    <!-- Result Box -->
+    <div class="result-box">
+        <div class="icon">
+            <i class="fa fa-handshake-o"></i>
+        </div>
+        <div class="complete-text"> Congratulations, you have completed the quiz</div>
+        
+            <div class="score-text">
+                <!-- <span> Sorry, you got only <p> 2</p> out of <p>10 questions. Study your Bible </p></span> -->
+            </div>
+            <div class="btns">
+                <button class="restart"> Replay Quiz</button>
+                <button class="quit"> Quit Quiz</button>
+                <button class="contact-me" id="contact"> Contact Me</button>
+            </div>
+    </div>
+
+    <!-- Contact Box -->
+    <div class="contact-box">
+        <div class="text-area">
+            <h2> You can drop a message or a review and I'll reply as soon as possible.</h2>
+            <form action="" method="post">
+            <div class="input">
+                <label for="text"> Your name: </label>
+                <input type="text" id="text" required> 
+            </div>
+            <div class="input">
+                <label for="text2"> Your email- address</label>
+                <input type="text" id="text2" required> 
+            </div>
+            <div class="input">
+                <label for="msg"> Your message</label>
+                <textarea name="msg" id="msg" required ></textarea>
+            </div>    
+            <button class="form-btn" id="contact"> Submit</button>
+            <button class="start"> Go Back To Quiz</button>
+        </form>
+       
+        </div>
+
+        <div class="icon">
+            <a href="https://twitter.com/Oluwaremzy22?s=09"> <i class="fa fa-twitter" aria-hidden="true"></i> </a>
+            <a href=""> <i class="fa fa-linkedin" aria-hidden="true"></i> </a>
+            <a href=""> <i class="fa fa-envelope" aria-hidden="true"></i> </a>
+            <a href=""> <i class="fa fa-github" aria-hidden="true"></i> </a>
+        </div>
+
+    </div>
+
+    <script src="js/questions.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
